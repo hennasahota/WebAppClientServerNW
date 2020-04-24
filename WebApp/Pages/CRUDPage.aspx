@@ -56,13 +56,14 @@
                 <br />  
              <asp:Label ID="Label3" runat="server" Text="Guardian"
                      AssociatedControlID="GuardianID"></asp:Label>
-            <asp:DropDownList ID="GuardianID" runat="server">
+            <asp:DropDownList ID="GuardianID" runat="server" DataSourceID="GuardODS" DataTextField="FullName" DataValueField="GuardianID" AppendDataBoundItems="true">
                 <asp:ListItem Value ="0">Select...</asp:ListItem>
             </asp:DropDownList>
                 <br />  
              <asp:Label ID="Label4" runat="server" Text="Team"
                      AssociatedControlID="TeamID"></asp:Label>
-            <asp:DropDownList ID="TeamID" runat="server">
+            <asp:DropDownList ID="TeamID" runat="server" DataSourceID="Teamods" DataTextField="TeamName" 
+             DataValueField="TeamID" AppendDataBoundItems="true">
                 <asp:ListItem Value ="0">Select...</asp:ListItem>
             </asp:DropDownList>
                 <br />  
@@ -94,4 +95,9 @@
             <asp:TextBox ID="MedicalAlerts" runat="server"></asp:TextBox>
         </fieldset>
     </div>
+
+    <asp:ObjectDataSource ID="GuardODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List" TypeName="DBSystem.BLL.Controller03"></asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="Teamods" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="List" TypeName="DBSystem.BLL.TeamController"></asp:ObjectDataSource>
+
 </asp:Content>

@@ -21,7 +21,7 @@ namespace DBSystem.BLL
                 return context.Teams.Find(id);
             }
         }
-        [DataObjectMethod.]
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<Team> List()
         {
             using (var context = new Context())
