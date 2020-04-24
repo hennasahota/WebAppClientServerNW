@@ -56,9 +56,9 @@
     <Compile Include="BLL\Controller02.cs" />
     <Compile Include="BLL\Controller03.cs" />
     <Compile Include="DAL\Context.cs" />
-    <Compile Include="ENTITIES\Entity01.cs" />
-    <Compile Include="ENTITIES\Entity02.cs" />
-    <Compile Include="ENTITIES\Entity03.cs" />
+    <Compile Include="ENTITIES\Teams.cs" />
+    <Compile Include="ENTITIES\Players.cs" />
+    <Compile Include="ENTITIES\Guardians.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -122,12 +122,12 @@ namespace WebApp.Pages
             try
             {
                 Controller01 sysmgr = new Controller01();
-                List<Entity01> info = null;
+                List<Teams> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.CategoryName.CompareTo(y.CategoryName));
                 CategoryList.DataSource = info;
-                CategoryList.DataTextField = nameof(Entity01.CategoryName);
-                CategoryList.DataValueField = nameof(Entity01.CategoryID);
+                CategoryList.DataTextField = nameof(Teams.CategoryName);
+                CategoryList.DataValueField = nameof(Teams.CategoryID);
                 CategoryList.DataBind();
                 CategoryList.Items.Insert(0, "select...");
 
@@ -143,12 +143,12 @@ namespace WebApp.Pages
             try
             {
                 Controller03 sysmgr = new Controller03();
-                List<Entity03> info = null;
+                List<Guardians> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.ContactName.CompareTo(y.ContactName));
                 SupplierList.DataSource = info;
-                SupplierList.DataTextField = nameof(Entity03.ContactName);
-                SupplierList.DataValueField = nameof(Entity03.SupplierID);
+                SupplierList.DataTextField = nameof(Guardians.ContactName);
+                SupplierList.DataValueField = nameof(Guardians.SupplierID);
                 SupplierList.DataBind();
                 SupplierList.Items.Insert(0, "select...");
 

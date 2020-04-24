@@ -27,12 +27,12 @@ namespace WebApp.Pages
                 Fetch02.Enabled = false;
                 List02.Enabled = false;
                 Controller01 sysmgr = new Controller01();
-                List<Entity01> info = null;
+                List<Teams> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.CategoryName.CompareTo(y.CategoryName));
                 List01.DataSource = info;
-                List01.DataTextField = nameof(Entity01.CategoryName);
-                List01.DataValueField = nameof(Entity01.CategoryID);
+                List01.DataTextField = nameof(Teams.CategoryName);
+                List01.DataValueField = nameof(Teams.CategoryID);
                 List01.DataBind();
                 List01.Items.Insert(0, "select...");
             }

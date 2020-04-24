@@ -12,7 +12,7 @@ namespace DBSystem.BLL
 {
     public class Controller03 //Supplier
     {
-        public List<Entity03> List()
+        public List<Guardians> List()
         {
             using (var context = new Context())
             {

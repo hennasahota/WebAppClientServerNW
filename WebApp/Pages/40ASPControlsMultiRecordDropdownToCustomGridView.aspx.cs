@@ -25,12 +25,12 @@ namespace WebApp.Pages
             try
             {
                 Controller01 sysmgr = new Controller01();
-                List<Entity01> info = null;
+                List<Teams> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.CategoryName.CompareTo(y.CategoryName));
                 List01.DataSource = info;
-                List01.DataTextField = nameof(Entity01.CategoryName);
-                List01.DataValueField = nameof(Entity01.CategoryID);
+                List01.DataTextField = nameof(Teams.CategoryName);
+                List01.DataValueField = nameof(Teams.CategoryID);
                 List01.DataBind();
                 List01.Items.Insert(0, "select...");
             }
@@ -50,7 +50,7 @@ namespace WebApp.Pages
                 try
                 {
                     Controller01 sysmgr01 = new Controller01();
-                    Entity01 info01 = null;
+                    Teams info01 = null;
                     info01 = sysmgr01.FindByPKID(int.Parse(List01.SelectedValue));
                     IDLabel01.Text = "Category ID:";
                     IDLabel02.Text = info01.CategoryID.ToString();

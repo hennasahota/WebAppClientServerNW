@@ -36,7 +36,7 @@ namespace WebApp.Pages
                     if (id > 0)
                     {
                         Controller01 sysmgr = new Controller01();
-                        Entity01 info = null;
+                        Teams info = null;
                         info = sysmgr.FindByPKID(id); //BLL controller method
                         if (info == null)
                         {
