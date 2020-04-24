@@ -2,141 +2,96 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Product Maintenance Page</h1>
     
-    <div class="row">
-        <div class="col-md-4 text-right">
-                <asp:Label ID="Label1" runat="server" Text="ID"
-                     AssociatedControlID="ID">
-                </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="ID" runat="server" ReadOnly="true">
-                </asp:TextBox>
-        </div>
+   <asp:RequiredFieldValidator ID="RequiredFirstName" runat="server"
+        ErrorMessage="First Name is required." Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+         ControlToValidate="FirstName"></asp:RequiredFieldValidator >
+    <asp:RequiredFieldValidator ID="RequiredLastName" runat="server"
+        ErrorMessage="Last Name is required." Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+         ControlToValidate="LastName"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredPlayerAge" runat="server"
+        ErrorMessage="Age is required." Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+         ControlToValidate="PlayerAge"></asp:RequiredFieldValidator>
+    <asp:RangeValidator ID="RangePlayerAge" runat="server"
+        ErrorMessage="Age must be between 6 and 14." Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+         ControlToValidate="PlayerAge"  MaximumValue="14" MinimumValue="6" Type="Integer"></asp:RangeValidator>
+    <asp:RequiredFieldValidator ID="RequiredAlbertaHealthCareNumber" runat="server"
+        ErrorMessage="Alberta Health Care Number is required." Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+         ControlToValidate="AlbertaHealthCareNumber"></asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegExAlbertaHealthCareNumber" runat="server"
+        ErrorMessage="Invalid Alberta Health Care Number format (11111111111)" Display="None"
+         ForeColor="#990000"  SetFocusOnError="true"
+         ControlToValidate="AlbertaHealthCareNumber"
+         ValidationExpression="[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]">
+    </asp:RegularExpressionValidator>
+
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server"
+            HeaderText="Address the following concerns about your entered data."/>
+
+     <div class="col-md-12">
+         <asp:Label ID="Label1" runat="server" Text="Select a Player"></asp:Label>&nbsp;
+         <asp:DropDownList ID="PlayerSearch" runat="server"></asp:DropDownList>&nbsp;
+         <asp:LinkButton ID="Search" runat="server" OnClick="Search_Click" CausesValidation="false">Search</asp:LinkButton>&nbsp;&nbsp;
+         <asp:LinkButton ID="Clear" runat="server" OnClick="Clear_Click" CausesValidation="false">Clear</asp:LinkButton>&nbsp;&nbsp;
+         <asp:LinkButton ID="Add" runat="server" CausesValidation="true" OnClick="Add_Click">Add</asp:LinkButton>&nbsp;&nbsp;
+         <asp:LinkButton ID="Update" runat="server" OnClick="Update_Click">Update</asp:LinkButton>&nbsp;&nbsp;
+         <asp:LinkButton ID="Delete" runat="server" CausesValidation="false" OnClientClick="return confirm('Are you sure you want to delete this player?')" OnClick="Delete_Click">Delete</asp:LinkButton>
+
+         <br /><br />
+             <asp:DataList ID="Message" runat="server">
+                <ItemTemplate>
+                    <%# Container.DataItem %>
+                </ItemTemplate>
+             </asp:DataList>
+     </div>
+>
+
+
+    <div class="col-md-12">
+        <fieldset class="form-horizontal">
+            <legend>Player Information</legend>
+
+             <asp:Label ID="Label2" runat="server" Text="Player ID:"
+                    AssociatedControlID="PlayerID"></asp:Label>
+             <asp:Label ID="PlayerID" runat="server"></asp:Label>
+                <br />  
+             <asp:Label ID="Label3" runat="server" Text="Guardian"
+                     AssociatedControlID="GuardianID"></asp:Label>
+            <asp:DropDownList ID="GuardianID" runat="server">
+                <asp:ListItem Value ="0">Select...</asp:ListItem>
+            </asp:DropDownList>
+                <br />  
+             <asp:Label ID="Label4" runat="server" Text="Team"
+                     AssociatedControlID="TeamID"></asp:Label>
+            <asp:DropDownList ID="TeamID" runat="server">
+                <asp:ListItem Value ="0">Select...</asp:ListItem>
+            </asp:DropDownList>
+                <br />  
+            <asp:Label ID="Label5" runat="server" Text="First Name"
+                     AssociatedControlID="FirstName"></asp:Label>
+            <asp:TextBox ID="FirstName" runat="server"></asp:TextBox>
+                <br />  
+            <asp:Label ID="Label6" runat="server" Text="Last Name"
+                     AssociatedControlID="LastName"></asp:Label>
+            <asp:TextBox ID="LastName" runat="server"></asp:TextBox>
+                <br />  
+            <asp:Label ID="Label7" runat="server" Text="Age"
+                     AssociatedControlID="PlayerAge"></asp:Label>
+            <asp:TextBox ID="PlayerAge" runat="server"></asp:TextBox>
+                <br />  
+            <asp:Label ID="Label8" runat="server" Text="Gender"
+                     AssociatedControlID="PlayerGender"></asp:Label>
+            <asp:RadioButtonList ID="PlayerGender" runat="server">
+                <asp:ListItem Value="M">M</asp:ListItem>
+                <asp:ListItem  Value="F">F</asp:ListItem>
+            </asp:RadioButtonList>
+                <br />  
+            <asp:Label ID="Label9" runat="server" Text="Alberta Health Care Number"
+                     AssociatedControlID="AlbertaHealthCareNumber"></asp:Label>
+            <asp:TextBox ID="AlbertaHealthCareNumber" runat="server"></asp:TextBox>
+                <br />  
+            <asp:Label ID="Label10" runat="server" Text="Medical Alert Details"
+                     AssociatedControlID="MedicalAlerts"></asp:Label>
+            <asp:TextBox ID="MedicalAlerts" runat="server"></asp:TextBox>
+        </fieldset>
     </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label2" runat="server" Text="Name"
-                     AssociatedControlID="Name"></asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="Name" runat="server"></asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                <asp:Label ID="Label6" runat="server" Text="Supplier"
-                     AssociatedControlID="SupplierList">
-                </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:DropDownList ID="SupplierList" runat="server" Width="300px">
-                </asp:DropDownList> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                <asp:Label ID="Label7" runat="server" Text="Category"
-                     AssociatedControlID="CategoryList">
-                </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:DropDownList ID="CategoryList" runat="server" Width="300px" >
-                </asp:DropDownList> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label3" runat="server" Text="Quantity/Unit"
-                     AssociatedControlID="QuantityPerUnit"></asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="QuantityPerUnit" runat="server"></asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label4" runat="server" Text="Unit Price"
-                     AssociatedControlID="UnitPrice">
-                  </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="UnitPrice" runat="server"> 
-                </asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label8" runat="server" Text="Units In Stock"
-                     AssociatedControlID="UnitsInStock">
-                  </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="UnitsInStock" runat="server"> 
-                </asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label9" runat="server" Text="Units On Order"
-                     AssociatedControlID="UnitsOnOrder">
-                  </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="UnitsOnOrder" runat="server"> 
-                </asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label10" runat="server" Text="Reorder Level"
-                     AssociatedControlID="ReorderLevel">
-                  </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:TextBox ID="ReorderLevel" runat="server"> 
-                </asp:TextBox>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-right">
-                  <asp:Label ID="Label11" runat="server" Text="Discontinued"
-                     AssociatedControlID="Discontinued">
-                  </asp:Label>
-        </div>
-        <div class="col-md-4 text-left">
-                <asp:CheckBox ID="Discontinued" runat="server">
-                </asp:CheckBox> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-6 text-left">
-            <asp:Button ID="BackButton" runat="server" Text="Back" CausesValidation="false" OnClick="Back_Click" />&nbsp;&nbsp;
-            <asp:Button ID="AddButton" runat="server" OnClick="Add_Click" Text="Add"/>&nbsp;&nbsp;
-            <asp:Button ID="UpdateButton" runat="server" OnClick="Update_Click" Text="Update"/>&nbsp;&nbsp;
-            <asp:Button ID="DeleteButton" runat="server" OnClick="Delete_Click" Text="Delete"
-              OnClientClick="return CallFunction();"/>
-        </div>
-    </div>
-    <br /><br />
-    <div class="row">
-        <div class="offset-2"> 
-            <asp:DataList ID="Message" runat="server">
-            <ItemTemplate>
-                <%# Container.DataItem %>
-            </ItemTemplate>
-            </asp:DataList>
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2"> 
-            <label ID="LabelMessage1" name="LabelMessage1" runat="server" />
-        </div>
-    </div>
-    <script type="text/javascript">
-        function CallFunction() {
-            return confirm("Are you sure you wish to delete this record?");
-       }
-   </script>
 </asp:Content>

@@ -59,52 +59,17 @@
                                         aria-haspopup="true" aria-expanded="false"> 
                                         Pages
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarSubMenu">
-                                    <a class="dropdown-item"
-                                            href="~/Pages/10HTMLServerControls.aspx"
-                                            style="color:black" runat="server">
-                                            01-HTML Server Controls
-                                    </a>
-                                    <a class="dropdown-item"
-                                            href="~/Pages/20ASPControlsSingleRecordQuery.aspx"
-                                            style="color:black" runat="server">
-                                            01-Single Record Query using Primary Key (Ex05)
-                                    </a>
-                                    
-                                    <a class="dropdown-item"
-                                            href="~/Pages/30ASPControlsMultiRecordDropdownToDefaultGridView.aspx"
-                                            style="color:black" runat="server">
-                                            02-Multi Record Query Dropdown to Default GridView
-                                    </a>
-                                    <a class="dropdown-item"
-                                            href="~/Pages/40ASPControlsMultiRecordDropdownToCustomGridView.aspx"
-                                            style="color:black" runat="server">
-                                            03-Multi Record Query Dropdown to Custom GridView (Ex06)
-                                    </a>
-                                    <a class="dropdown-item"
-                                            href="~/Pages/50ASPControlsMultiRecordDropdownToSingleRecord.aspx"
-                                            style="color:black" runat="server">
-                                            04-Multi Record Query Dropdown to Single Record via Page Navigation (Ex09,10)
-                                    </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarSubMenu">                                   
                                     <a class="dropdown-item"
                                             href="~/Pages/60ASPControlsMultiRecDropToCustGridViewToSingleRec.aspx"
                                             style="color:black" runat="server">
-                                            05-Multi Record Query Dropdown to Custom GridView to Single Record via Page Navigation (Project)
-                                    </a>
+                                           REAL 6
+                                        Navigation (Project)
+                                    </a>                                                                     
                                     <a class="dropdown-item"
-                                            href="~/Pages/70ASPControlsMultiRecDropToDropToSingleRec.aspx"
+                                            href="~/Pages/CRUDPage.aspx"
                                             style="color:black" runat="server">
-                                            06-Multi Record Query Dropdown to another Dropdown to Single Record via Page Navigation (Project)
-                                    </a>
-                                    <a class="dropdown-item"
-                                            href="~/Pages/80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx"
-                                            style="color:black" runat="server">
-                                            07-Partial String Search to Custom GridView to Single Record via Page Navigation (Project)
-                                    </a>
-                                    <a class="dropdown-item"
-                                            href="~/Pages/90ASPControlsPartialStringSearchToDropToSingleRec.aspx"
-                                            style="color:black" runat="server">
-                                            08-Partial String Search to Dropdown to Single Record via Page Navigation (Project)
+                                           CRUD (Project)
                                     </a>
                                     
                                 </div>

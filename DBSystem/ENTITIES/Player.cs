@@ -22,5 +22,15 @@ namespace DBSystem.ENTITIES
         public string Gender { get; set; }
         public string AlbertaHealthCareNumber { get; set; }
         public string MedicalAlertDetails { get; set; }
+
+        [NotMapped]
+        public string PlayerName
+        {
+            get
+            {
+                return FirstName + " , " + LastName;
+            }
+        }
     }
 }
+

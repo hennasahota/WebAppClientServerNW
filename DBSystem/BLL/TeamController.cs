@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using DBSystem.DAL;
 using DBSystem.ENTITIES;
+using System.ComponentModel;
 
 namespace DBSystem.BLL
 {
+    [DataObject]
     public class TeamController //Category
     {
         public Team FindByPKID(int id)
@@ -19,6 +21,7 @@ namespace DBSystem.BLL
                 return context.Teams.Find(id);
             }
         }
+        [DataObjectMethod.]
         public List<Team> List()
         {
             using (var context = new Context())

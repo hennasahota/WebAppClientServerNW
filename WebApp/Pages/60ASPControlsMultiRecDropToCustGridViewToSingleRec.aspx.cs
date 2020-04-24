@@ -66,7 +66,7 @@ namespace WebApp.Pages
                 }
             }
         }
-        protected void List02_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void TeamList_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             PlayerList.PageIndex = e.NewPageIndex;
             Fetch_Click(sender, new EventArgs());
