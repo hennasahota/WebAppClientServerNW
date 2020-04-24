@@ -47,7 +47,7 @@ namespace WebApp.Pages
                 else
                 {
                     AddButton.Enabled = false;
-                    Controller02 sysmgr = new Controller02();
+                    PlayerController sysmgr = new PlayerController();
                     Entity02 info = null;
                     info = sysmgr.FindByPKID(int.Parse(pid));
                     if (info == null)
@@ -121,13 +121,13 @@ namespace WebApp.Pages
         {
             try
             {
-                Controller01 sysmgr = new Controller01();
-                List<Teams> info = null;
+                TeamController sysmgr = new TeamController();
+                List<Team> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.CategoryName.CompareTo(y.CategoryName));
                 CategoryList.DataSource = info;
-                CategoryList.DataTextField = nameof(Teams.CategoryName);
-                CategoryList.DataValueField = nameof(Teams.CategoryID);
+                CategoryList.DataTextField = nameof(Team.CategoryName);
+                CategoryList.DataValueField = nameof(Team.CategoryID);
                 CategoryList.DataBind();
                 CategoryList.Items.Insert(0, "select...");
 
@@ -143,12 +143,12 @@ namespace WebApp.Pages
             try
             {
                 Controller03 sysmgr = new Controller03();
-                List<Guardians> info = null;
+                List<Guardian> info = null;
                 info = sysmgr.List();
                 info.Sort((x, y) => x.ContactName.CompareTo(y.ContactName));
                 SupplierList.DataSource = info;
-                SupplierList.DataTextField = nameof(Guardians.ContactName);
-                SupplierList.DataValueField = nameof(Guardians.SupplierID);
+                SupplierList.DataTextField = nameof(Guardian.ContactName);
+                SupplierList.DataValueField = nameof(Guardian.SupplierID);
                 SupplierList.DataBind();
                 SupplierList.Items.Insert(0, "select...");
 
@@ -228,7 +228,7 @@ namespace WebApp.Pages
             {
                 try
                 {
-                    Controller02 sysmgr = new Controller02();
+                    PlayerController sysmgr = new PlayerController();
                     Entity02 item = new Entity02();
                     //No ProductID here as the database will give a new one back when we add
                     item.ProductName = Name.Text.Trim(); //NOT NULL
@@ -306,7 +306,7 @@ namespace WebApp.Pages
             {
                 try
                 {
-                    Controller02 sysmgr = new Controller02();
+                    PlayerController sysmgr = new PlayerController();
                     Entity02 item = new Entity02();
                     item.ProductID = int.Parse(ID.Text);
                     item.ProductName = Name.Text.Trim();
@@ -387,7 +387,7 @@ namespace WebApp.Pages
             {
                 try
                 {
-                    Controller02 sysmgr = new Controller02();
+                    PlayerController sysmgr = new PlayerController();
                     int rowsaffected = sysmgr.Delete(int.Parse(ID.Text));
                     if (rowsaffected > 0)
                     {

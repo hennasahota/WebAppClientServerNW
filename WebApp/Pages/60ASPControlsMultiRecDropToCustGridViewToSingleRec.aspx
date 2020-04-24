@@ -9,62 +9,48 @@
         <br /><br />
         <asp:Label ID="MessageLabel" runat="server" ></asp:Label>
         <br />
-        <asp:GridView ID="List02" runat="server" 
-            AutoGenerateColumns="False"
-            CssClass="table table-striped" GridLines="Horizontal"
-            BorderStyle="None" AllowPaging="True"
-            OnPageIndexChanging="List02_PageIndexChanging" PageSize="5"
-            OnSelectedIndexChanged="List02_SelectedIndexChanged">
+        <asp:GridView ID="PlayerList" runat="server"
+                 AutoGenerateColumns="False"
+                    CssClass="table table-striped" GridLines="Both"
+                    BorderStyle="None" AllowPaging="True" OnPageIndexChanging="TeamList_PageIndexChanging" PageSize="5">
+                 <Columns>
 
-            <Columns>
-                <asp:CommandField SelectText="View" ShowSelectButton="True" 
-                    ButtonType="Button" CausesValidation="false">
-                </asp:CommandField>
-                <asp:TemplateField HeaderText="ID" Visible="True">
-                    <ItemStyle HorizontalAlign="Left"></ItemStyle>
-                    <ItemTemplate>
-                        <asp:Label ID="ProductID" runat="server" 
-                            Text='<%# Eval("ProductID") %>'>
-                        </asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Product">
-                    <ItemStyle HorizontalAlign="Left"></ItemStyle>
-                    <ItemTemplate>
-                        <asp:Label ID="ProductName" runat="server" 
-                            Text='<%# Eval("ProductName") %>'>
-                        </asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Qty/Per">
-                    <ItemStyle HorizontalAlign="Left"></ItemStyle>
-                     <ItemTemplate>
-                        <asp:Label ID="QuantityPerUnit" runat="server" 
-                            Text='<%# Eval("QuantityPerUnit") == null ? "each" : Eval("QuantityPerUnit") %>'>
-                        </asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Price ($)">
-                    <HeaderStyle HorizontalAlign="Right"></HeaderStyle>
-                    <ItemStyle HorizontalAlign="Left"></ItemStyle>
-                     <ItemTemplate>
-                        <asp:Label ID="UnitPrice" runat="server" 
-                            Text='<%# string.Format("{0:0.00}",Eval("UnitPrice"))%>'>
-                        </asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Disc">
-                    <ItemStyle HorizontalAlign="Left"></ItemStyle>
-                     <ItemTemplate>
-                         <asp:CheckBox ID="Discontinued" runat="server" 
-                              Checked='<%# Eval("Discontinued") %>'/>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
+                     <asp:TemplateField HeaderText="Name">
+                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                            <ItemTemplate>
+                                <asp:Label ID="PlayerName" runat="server"
+                                    Text='<%# Eval("PlayerName") %>'></asp:Label>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+
+                     <asp:TemplateField HeaderText="Age">
+                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                            <ItemTemplate>
+                                <asp:Label ID="PlayerAge" runat="server"
+                                    Text='<%# Eval("Age") %>'></asp:Label>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+
+                     <asp:TemplateField HeaderText="Gender">
+                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                            <ItemTemplate>
+                                <asp:Label ID="PlayerGender" runat="server"
+                                    Text='<%# Eval("Gender") %>'></asp:Label>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Med Alert">
+                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                            <ItemTemplate>
+                                <asp:Label ID="PlayerMedAlert" runat="server"
+                                    Text='<%# Eval("MedicalAlertDetails") %>'></asp:Label>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
             <EmptyDataTemplate>
-                no data to display
+                no data available at this time.
             </EmptyDataTemplate>
             <PagerSettings FirstPageText="Start" LastPageText="End" Mode="NumericFirstLast" PageButtonCount="3" />
-        </asp:GridView>
+            </asp:GridView>
     </div>
 </asp:Content>

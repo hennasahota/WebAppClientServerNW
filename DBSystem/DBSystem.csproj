@@ -52,13 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Controller01.cs" />
-    <Compile Include="BLL\Controller02.cs" />
+    <Compile Include="BLL\TeamController.cs" />
+    <Compile Include="BLL\PlayerController.cs" />
     <Compile Include="BLL\Controller03.cs" />
     <Compile Include="DAL\Context.cs" />
-    <Compile Include="ENTITIES\Teams.cs" />
-    <Compile Include="ENTITIES\Players.cs" />
-    <Compile Include="ENTITIES\Guardians.cs" />
+    <Compile Include="ENTITIES\Team.cs" />
+    <Compile Include="ENTITIES\Player.cs" />
+    <Compile Include="ENTITIES\Guardian.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

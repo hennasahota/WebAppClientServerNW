@@ -125,16 +125,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Pages\10HTMLServerControls.aspx" />
-    <Content Include="Pages\20ASPControlsSingleRecordQuery.aspx" />
-    <Content Include="Pages\50ASPControlsMultiRecordDropdownToSingleRecord.aspx" />
-    <Content Include="Pages\40ASPControlsMultiRecordDropdownToCustomGridView.aspx" />
-    <Content Include="Pages\70ASPControlsMultiRecDropToDropToSingleRec.aspx" />
-    <Content Include="Pages\80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx" />
     <Content Include="Pages\90ASPControlsPartialStringSearchToDropToSingleRec.aspx" />
     <Content Include="Pages\CRUDPage.aspx" />
     <Content Include="Pages\60ASPControlsMultiRecDropToCustGridViewToSingleRec.aspx" />
-    <Content Include="Pages\30ASPControlsMultiRecordDropdownToDefaultGridView.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -305,48 +298,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\10HTMLServerControls.aspx.cs">
-      <DependentUpon>10HTMLServerControls.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\10HTMLServerControls.aspx.designer.cs">
-      <DependentUpon>10HTMLServerControls.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\20ASPControlsSingleRecordQuery.aspx.cs">
-      <DependentUpon>20ASPControlsSingleRecordQuery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\20ASPControlsSingleRecordQuery.aspx.designer.cs">
-      <DependentUpon>20ASPControlsSingleRecordQuery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\50ASPControlsMultiRecordDropdownToSingleRecord.aspx.cs">
-      <DependentUpon>50ASPControlsMultiRecordDropdownToSingleRecord.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\50ASPControlsMultiRecordDropdownToSingleRecord.aspx.designer.cs">
-      <DependentUpon>50ASPControlsMultiRecordDropdownToSingleRecord.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\40ASPControlsMultiRecordDropdownToCustomGridView.aspx.cs">
-      <DependentUpon>40ASPControlsMultiRecordDropdownToCustomGridView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\40ASPControlsMultiRecordDropdownToCustomGridView.aspx.designer.cs">
-      <DependentUpon>40ASPControlsMultiRecordDropdownToCustomGridView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\70ASPControlsMultiRecDropToDropToSingleRec.aspx.cs">
-      <DependentUpon>70ASPControlsMultiRecDropToDropToSingleRec.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\70ASPControlsMultiRecDropToDropToSingleRec.aspx.designer.cs">
-      <DependentUpon>70ASPControlsMultiRecDropToDropToSingleRec.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx.cs">
-      <DependentUpon>80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx.designer.cs">
-      <DependentUpon>80ASPControlsPartialStringSearchToCustGridViewToSingleRec.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\90ASPControlsPartialStringSearchToDropToSingleRec.aspx.cs">
       <DependentUpon>90ASPControlsPartialStringSearchToDropToSingleRec.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -367,13 +318,6 @@
     </Compile>
     <Compile Include="Pages\60ASPControlsMultiRecDropToCustGridViewToSingleRec.aspx.designer.cs">
       <DependentUpon>60ASPControlsMultiRecDropToCustGridViewToSingleRec.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\30ASPControlsMultiRecordDropdownToDefaultGridView.aspx.cs">
-      <DependentUpon>30ASPControlsMultiRecordDropdownToDefaultGridView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\30ASPControlsMultiRecordDropdownToDefaultGridView.aspx.designer.cs">
-      <DependentUpon>30ASPControlsMultiRecordDropdownToDefaultGridView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

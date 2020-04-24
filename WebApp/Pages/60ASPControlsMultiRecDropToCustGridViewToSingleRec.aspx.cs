@@ -17,24 +17,25 @@ namespace WebApp.Pages
             MessageLabel.Text = "";
             if (!Page.IsPostBack)
             {
-                BindList();
+                BindTeamList();
             }
         }
-        protected void BindList()
+        protected void BindTeamList()
         {
+            //standard lookup
             try
             {
-                Controller01 sysmgr = new Controller01();
-                List<Teams> info = null;
+                TeamController sysmgr = new TeamController();
+                List<Team> info = null;
                 info = sysmgr.List();
-                info.Sort((x, y) => x.CategoryName.CompareTo(y.CategoryName));
+                info.Sort((x, y) => x.TeamName.CompareTo(y.TeamName));
                 List01.DataSource = info;
-                List01.DataTextField = nameof(Teams.CategoryName);
-                List01.DataValueField = nameof(Teams.CategoryID);
+                List01.DataTextField = nameof(Team.TeamName);
+                List01.DataValueField = nameof(Team.TeamID);
                 List01.DataBind();
                 List01.Items.Insert(0, "select...");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageLabel.Text = ex.Message;
             }
@@ -49,12 +50,15 @@ namespace WebApp.Pages
             {
                 try
                 {
-                    Controller02 sysmgr = new Controller02();
-                    List<Entity02> info = null;
-                    info = sysmgr.FindByID(int.Parse(List01.SelectedValue));
-                    info.Sort((x, y) => x.ProductName.CompareTo(y.ProductName));
-                    List02.DataSource = info;
-                    List02.DataBind();
+                    PlayerController sysmgr = new PlayerController();
+                    List<Player> info = null;
+                    info = sysmgr.Player_GetByTeam(int.Parse(List01.SelectedValue));
+                    info.Sort((x, y) => x.LastName.CompareTo(y.LastName));
+                    PlayerList.DataSource = info;
+                    PlayerList.DataBind();
+
+                    PlayerList.DataSource = info;
+                    PlayerList.DataBind();
                 }
                 catch (Exception ex)
                 {
@@ -64,12 +68,12 @@ namespace WebApp.Pages
         }
         protected void List02_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            List02.PageIndex = e.NewPageIndex;
+            PlayerList.PageIndex = e.NewPageIndex;
             Fetch_Click(sender, new EventArgs());
         }
         protected void List02_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow agvrow = List02.Rows[List02.SelectedIndex];
+            GridViewRow agvrow = PlayerList.Rows[PlayerList.SelectedIndex];
             string productid = (agvrow.FindControl("ProductID") as Label).Text;
             Response.Redirect("CRUDPage.aspx?pid=" + productid);
         }

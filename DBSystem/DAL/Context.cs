@@ -11,11 +11,11 @@ namespace DBSystem.DAL
 {
     internal class Context : DbContext
     {
-        public Context() : base("NWDB") { }
+        public Context() : base("FSIS_db") { }
         //public Context() : base("FSIS_db") { }
         //public Context() : base("StarTEDDB") { }
-        public DbSet<Teams> Entity01s { get; set; }
-        public DbSet<Entity02> Entity02s { get; set; }
-        public DbSet<Guardians> Entity03s { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Guardian> Guardians { get; set; }
     }
 }
